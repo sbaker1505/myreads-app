@@ -49,3 +49,5 @@ class Bookshelf extends React.Component {
     )
   }
 }
+
+export default Bookshelf
