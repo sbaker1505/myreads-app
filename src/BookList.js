@@ -25,11 +25,13 @@ class BookList extends React.Component {
         </div>
         <div className="list-books-content">
           <div className="bookshelf">
+            {/* Start of bookshelves */}
             {this.bookshelf.map((bookshelf) => (
               <div key={bookshelf.id}>
                 <h2 className="bookshelf-title">{bookshelf.title}</h2>
                 <div className="bookshelf-books">
                   <ol className="books-grid">
+                    {/* Start of books */}
                     {this.props.books
                       .filter((book) => bookshelf.id === book.shelf)
                       .map((book) => (
@@ -42,6 +44,7 @@ class BookList extends React.Component {
                                 height: 193,
                                 backgroundImage: `url(${book.imageLinks.thumbnail})`
                               }}></div>
+                            {/* Bookshelf changer dropdown menu */}
                             <div className="book-shelf-changer">
                               <select value={bookshelf.id}>
                                 <optgroup label="Move to...">
