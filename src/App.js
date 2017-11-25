@@ -27,6 +27,7 @@ class BooksApp extends React.Component {
       this.getBooks()
     })
 
+  searchBooks = (query, number = 20) => BooksAPI.search(query, number).then()
 
   render() {
     return (
@@ -34,7 +35,9 @@ class BooksApp extends React.Component {
         <Route
           path='/search'
           render={() => (
-            <Search />
+            <Search
+              onSearch={this.searchBooks}
+            />
           )}
         />
         <Route
