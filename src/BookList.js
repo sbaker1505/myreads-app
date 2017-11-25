@@ -46,10 +46,14 @@ class BookList extends React.Component {
                               }}></div>
                             {/* Bookshelf changer dropdown menu */}
                             <div className="book-shelf-changer">
-                              <select value={bookshelf.id}>
+                              <select value={bookshelf.id} readOnly>
                                 <optgroup label="Move to...">
                                   {this.bookshelf.map((bookshelf) => (
-                                    <option value={bookshelf.id}>{bookshelf.title}</option>
+                                    <option
+                                      key={bookshelf.id}
+                                      value={bookshelf.id}>
+                                      {bookshelf.title}
+                                    </option>
                                   ))}
                                 </optgroup>
                               </select>
