@@ -37,11 +37,11 @@ class BookList extends React.Component {
                             <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
                             <div className="book-shelf-changer">
                               <select>
-                                <option value="none" disabled>Move to...</option>
-                                <option value="currentlyReading">Currently Reading</option>
-                                <option value="wantToRead">Want to Read</option>
-                                <option value="read">Read</option>
-                                <option value="none">None</option>
+                                <optgroup label="Move to...">
+                                  <option value="currentlyReading">Currently Reading</option>
+                                  <option value="wantToRead">Want to Read</option>
+                                  <option value="read">Read</option>
+                                </optgroup>
                               </select>
                             </div>
                           </div>
