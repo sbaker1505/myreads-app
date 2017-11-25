@@ -7,7 +7,8 @@ import './App.css'
 
 class BooksApp extends React.Component {
   state = {
-    books: []
+    books: [],
+    searchBooks: []
   }
 
   // Life Cycle event call
@@ -27,7 +28,11 @@ class BooksApp extends React.Component {
       this.getBooks()
     })
 
-  searchBooks = (query, number = 20) => BooksAPI.search(query, number).then()
+  searchBooks = (query, number = 20) => BooksAPI.search(query, number).then(() => {
+    BooksAPI.getAll().then(books => {
+      this.setState({searchBooks: books})
+    })
+  })
 
   render() {
     return (
