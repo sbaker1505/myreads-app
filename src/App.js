@@ -10,16 +10,18 @@ class BooksApp extends React.Component {
     books: []
   }
 
-  // API request to BooksAPI.js
+  // Life Cycle event call
   componentDidMount() {
     this.getBooks()
   }
 
+  // API request to BooksAPI.js function
   getBooks = () =>
     BooksAPI.getAll().then((books) => {
       this.setState({books})
     })
 
+  // Update shelf for books based on user selection
   updateShelf = (book, shelf) =>
     BooksAPI.update(book, shelf).then(() => {
       this.getBooks()
