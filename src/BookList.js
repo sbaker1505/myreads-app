@@ -43,11 +43,11 @@ class BookList extends React.Component {
                                 backgroundImage: `url(${book.imageLinks.thumbnail})`
                               }}></div>
                             <div className="book-shelf-changer">
-                              <select>
+                              <select value={bookshelf.id}>
                                 <optgroup label="Move to...">
-                                  <option value="currentlyReading">Currently Reading</option>
-                                  <option value="wantToRead">Want to Read</option>
-                                  <option value="read">Read</option>
+                                  {this.bookshelf.map((bookshelf) => (
+                                    <option value={bookshelf.id}>{bookshelf.title}</option>
+                                  ))}
                                 </optgroup>
                               </select>
                             </div>
