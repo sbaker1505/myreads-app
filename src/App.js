@@ -8,7 +8,21 @@ import './App.css'
 class BooksApp extends React.Component {
   state = {
     books: [],
-    searchBooks: []
+    searchBooks: [],
+    category: [
+      {
+        title: 'Currently Reading',
+        id: 'currentlyReading'
+      },
+      {
+        title: 'Want to Read',
+        id: 'wantToRead'
+      },
+      {
+        title: 'Read',
+        id: 'read'
+      }
+    ]
   }
 
   // Life Cycle event call
@@ -39,8 +53,10 @@ class BooksApp extends React.Component {
           path='/search'
           render={() => (
             <Search
+              bookCategory={this.state.category}
               books={this.state.searchBooks}
               onSearch={this.searchBooks}
+              onUpdateShelf={this.updateShelf}
             />
           )}
         />
@@ -48,6 +64,7 @@ class BooksApp extends React.Component {
           exact path='/'
           render={() => (
             <BookList
+              bookCategory={this.state.category}
               books={this.state.books}
               onUpdateShelf={this.updateShelf}
             />
