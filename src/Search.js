@@ -30,7 +30,9 @@ class Search extends React.Component {
           </div>
         </div>
         <div className="search-books-results">
-          <Book />
+          <Book
+            books={this.props.books}
+          />
         </div>
       </div>
     )

@@ -3,21 +3,6 @@ import { Link } from 'react-router-dom'
 import Book from './Book'
 
 class BookList extends React.Component {
-  bookshelf = [
-    {
-      title: 'Currently Reading',
-      id: 'currentlyReading'
-    },
-    {
-      title: 'Want to Read',
-      id: 'wantToRead'
-    },
-    {
-      title: 'Read',
-      id: 'read'
-    }
-  ]
-
   render() {
     return (
       <div className="list-books">
@@ -27,7 +12,7 @@ class BookList extends React.Component {
         <div className="list-books-content">
           <div className="bookshelf">
             {/* Start of bookshelves */}
-            {this.bookshelf.map((bookshelf) => (
+            {this.props.bookshelf.map((bookshelf) => (
               <div key={bookshelf.id}>
                 <h2 className="bookshelf-title">{bookshelf.title}</h2>
                 <div className="bookshelf-books">
