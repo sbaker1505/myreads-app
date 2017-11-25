@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Book from './Book'
 
 class Search extends React.Component {
   state = {
@@ -29,7 +30,7 @@ class Search extends React.Component {
           </div>
         </div>
         <div className="search-books-results">
-          <ol className="books-grid"></ol>
+          <Book />
         </div>
       </div>
     )
