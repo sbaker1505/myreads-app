@@ -55,7 +55,7 @@ class BookList extends React.Component {
                           <div className="book-title">{book.title}</div>
                           <div className="book-authors">
                             {book.authors.map((author) => (
-                              <p>{author}</p>
+                              <p key={author.toString().replace(/[.,\s]/g,'')}>{author}</p>
                             ))}
                           </div>
                         </div>
