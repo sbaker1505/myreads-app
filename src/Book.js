@@ -16,7 +16,10 @@ class Book extends React.Component {
             </div>
             {/* Bookshelf changer dropdown menu */}
             <div className="book-shelf-changer">
-              <select value={this.props.bookshelf.id} readOnly onChange={(event) => this.props.onUpdateShelf(this.props.book, event.target.value)}>
+              <select
+                value={this.props.bookshelf.id}
+                readOnly
+                onChange={(event) => this.props.onUpdateShelf(this.props.book, event.target.value)}>
                 <optgroup label="Move to...">
                   {this.props.bookCategory.map((bookshelf) => (
                     <option
