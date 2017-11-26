@@ -21,6 +21,10 @@ class BooksApp extends React.Component {
       {
         title: 'Read',
         id: 'read'
+      },
+      {
+        title: 'None',
+        id: 'none'
       }
     ]
   }

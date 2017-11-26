@@ -12,7 +12,7 @@ class BookList extends React.Component {
         <div className="list-books-content">
           <div className="bookshelf">
             {/* Start of bookshelves */}
-            {this.props.bookCategory.map((bookshelf) => (
+            {this.props.bookCategory.filter((bookshelf) => bookshelf.id !== 'none').map((bookshelf) => (
               <div key={bookshelf.id}>
                 <h2 className="bookshelf-title">{bookshelf.title}</h2>
                 <div className="bookshelf-books">
