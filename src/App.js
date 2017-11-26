@@ -46,10 +46,10 @@ class BooksApp extends React.Component {
       this.getBooks()
     })
 
-  searchBooks = (query, maxResults = 20) =>
+  searchBooks = (query, maxResults = 20) => {query &&
     BooksAPI.search(query, maxResults).then(books => {
       this.setState({searchBooks: books})
-  })
+  })}
 
   render() {
     return (
