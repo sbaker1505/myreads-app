@@ -1,16 +1,11 @@
 # MyReads App
----
 
 This app was developed using React.js and is based on starter code created by Udacity for the purpose of React Training.
-
----
 
 ## How to use
 
 Either Clone or Fork this repository and run (in your terminal):
 `npm install` and `npm start`
-
----
 
 ## Required Files
 
@@ -28,8 +23,6 @@ Either Clone or Fork this repository and run (in your terminal):
     + arrow-drop-down.svg
   + index.css
   + index.js
-
----
 
 ## Important information
 
@@ -118,7 +111,6 @@ This list of terms are the only terms that will work with the backend.
 * Web Development
 * iOS
 
----
 ## Authors
 
 - Scott Baker - _Initial work_ - [sbaker1505](https://github.com/sbaker1505)
