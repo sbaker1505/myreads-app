@@ -33,7 +33,7 @@ class Book extends React.Component {
           <div className="book-title">{this.props.book.title}</div>
           <div className="book-authors">
             {this.props.book.authors.map((author) => (
-              <p key={author.toString().replace(/[.,\s]/g,'')}>{author}</p>
+              <div key={author.toString().replace(/[.,\s]/g,'')}>{author}</div>
             ))}
           </div>
         </div>
