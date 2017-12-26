@@ -11,13 +11,13 @@ class Book extends React.Component {
               style={{
                 width: 128,
                 height: 193,
-                backgroundImage: `url(${this.props.book.imageLinks.thumbnail})`
+                backgroundImage: `url(${this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail : null})`
               }}>
             </div>
             {/* Bookshelf changer dropdown menu */}
             <div className="book-shelf-changer">
               <select
-                value={this.props.bookshelf.id}
+                value={this.props.bookshelf ? this.props.bookshelf : 'none'}
                 readOnly
                 onChange={(event) => this.props.onUpdateShelf(this.props.book, event.target.value)}>
                 <optgroup label="Move to...">
@@ -35,9 +35,12 @@ class Book extends React.Component {
           </div>
           <div className="book-title">{this.props.book.title}</div>
           <div className="book-authors">
-            {this.props.book.authors.map((author) => (
-              <div key={author.toString().replace(/[.,\s]/g,'')}>{author}</div>
-            ))}
+            {this.props.book.authors
+              ? this.props.book.authors.map((author) => (
+                  <div key={author.toString().replace(/[.,\s]/g,'')}>{author}</div>
+                ))
+              : null
+          }
           </div>
         </div>
       </li>

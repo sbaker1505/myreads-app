@@ -60,6 +60,7 @@ class BooksApp extends React.Component {
             <Search
               bookCategory={this.state.category}
               books={this.state.searchBooks}
+              currentBooks={this.state.books}
               onSearch={this.searchBooks}
               onUpdateShelf={(book, shelf) => {
                 this.updateShelf(book, shelf)

@@ -6,6 +6,7 @@ class Search extends React.Component {
   render() {
     return (
       <div className="search-books">
+        {console.log(this.props.currentBooks)}
         <div className="search-books-bar">
           <Link
             to='/'
@@ -22,16 +23,18 @@ class Search extends React.Component {
         </div>
         <div className="search-books-results">
           <ol className="books-grid">
-              {this.props.books.map((book) => (
-                <Book
-                  key={book.id}
-                  book={book}
-                  bookCategory={this.props.bookCategory}
-                  bookshelf={this.props.bookCategory[3]}
-                  onUpdateShelf={this.props.onUpdateShelf}
-                />
-              )
-              )}
+              {this.props.books.map
+                ? this.props.books.map((book) => {
+                    const currentBook = this.props.currentBooks.filter(currentbook => currentbook.id === book.id)
+                    return <Book
+                      key={book.id}
+                      book={book}
+                      bookCategory={this.props.bookCategory}
+                      bookshelf={currentBook.length > 0 ? currentBook[0].shelf : null}
+                      onUpdateShelf={this.props.onUpdateShelf}
+                    />
+                  })
+                : <p>No books found</p>}
           </ol>
         </div>
       </div>
