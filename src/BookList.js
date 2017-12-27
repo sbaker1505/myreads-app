@@ -26,7 +26,7 @@ class BookList extends React.Component {
                           key={book.id}
                           book={book}
                           bookCategory={this.props.bookCategory}
-                          bookshelf={bookshelf}
+                          bookshelf={bookshelf.id}
                           onUpdateShelf={this.props.onUpdateShelf}
                         />
                       ))}
